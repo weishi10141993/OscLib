@@ -13,7 +13,7 @@ CXX := $(shell if [[ x${QUALIFIER} == *c7* ]]; then echo 'clang++'; else echo 'g
 
 LDFLAGS := -L${ROOT_LIB} -lCore -lHist -L${GSL_LIB} -lgsl -lgslcblas
 
-LDFLAGS_BINS := -lOscLib -L${ROOT_LIB} -lCore -lGraf -lGpad -lHist -lMathCore -lRIO -Llib
+LDFLAGS_BINS := -lOscLib -L${ROOT_LIB} -lCore -lGraf -lGpad -lHist -lMathCore -lRIO -Llib -Wl,-rpath,${ROOT_LIB}
 
 # Only try to use stan if the product is set up
 ifdef STAN_MATH_INC
